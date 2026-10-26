@@ -1,0 +1,116 @@
+.shell {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header'
+    'main'
+    'nav';
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2);
+  background: var(--surface-card);
+  border-bottom: 2px solid var(--border-default);
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1);
+  display: flex;
+  gap: var(--space-1);
+  background: var(--surface-card);
+  border-top: 2px solid var(--border-default);
+}
+
+.navList li {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.navLink {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+}
+
+.navInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: var(--touch-min);
+  padding: var(--space-1);
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+}
+
+.navLinkActive .navInner {
+  background: var(--surface-selected);
+  color: var(--action-secondary-text);
+  font-weight: 700;
+}
+
+.main {
+  grid-area: main;
+  padding: var(--space-2);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.fallbackNotice {
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+/* Tablet and up: move nav to a persistent sidebar (Req 12.2, 12.3). */
+@media (min-width: 768px) {
+  .shell {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'header header'
+      'nav main';
+  }
+
+  .navList {
+    flex-direction: column;
+    border-top: none;
+    border-right: 2px solid var(--border-default);
+    height: 100%;
+  }
+
+  .navInner {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--space-1);
+    font-size: var(--text-base);
+  }
+
+  .main {
+    padding: var(--space-3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: var(--space-4);
+    max-width: 1100px;
+  }
+}

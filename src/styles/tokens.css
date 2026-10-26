@@ -1,0 +1,58 @@
+/*
+ * Design tokens - the single source of truth for branding, layout, and
+ * accessibility rules (Req 10, 11, 12, 13). Every component consumes these
+ * variables; no component may use ad-hoc colors, fonts, or spacing.
+ */
+
+:root {
+  /* ---- Color palette: light blue, gray, brown only (Req 11.1, 11.2) ---- */
+  --color-blue-050: #f0f5fa; /* page background / light surface */
+  --color-blue-200: #b9d4ec; /* accent surface, selected state */
+  --color-blue-600: #2c5f8a; /* primary action background */
+  --color-gray-050: #f5f6f7; /* card / panel background */
+  --color-gray-400: #9aa1a8; /* borders, decorative dividers */
+  --color-gray-800: #2b2f33; /* primary body text */
+  --color-brown-500: #8a5a44; /* secondary accent: headings, icons */
+  --color-brown-700: #5e3b2c; /* secondary action / emphasis text */
+
+  /* Semantic aliases (all drawn from the palette above) */
+  --surface-page: var(--color-blue-050);
+  --surface-card: var(--color-gray-050);
+  --surface-selected: var(--color-blue-200);
+  --border-default: var(--color-gray-400);
+  --text-primary: var(--color-gray-800);
+  --text-heading: var(--color-brown-500);
+  --text-on-primary: var(--color-blue-050);
+  --action-primary-bg: var(--color-blue-600);
+  --action-secondary-text: var(--color-brown-700);
+  --focus-ring: var(--color-brown-700);
+
+  /* ---- Typography: at most two typefaces (Req 11.3) ---- */
+  --font-heading: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px; /* large-text contrast boundary (Req 13.1) */
+  --text-xl: 24px;
+  --text-2xl: 32px;
+
+  /* ---- Spacing scale: fixed 8px base, applied uniformly (Req 10.3) ---- */
+  --space-1: 8px; /* minimum separation between content areas */
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+
+  /* ---- Radii ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ---- Touch target minimum (Req 12.6) ---- */
+  --touch-min: 44px;
+
+  /* ---- Breakpoints (reference values; media queries hard-code them) ---- */
+  --bp-phone-max: 767px;
+  --bp-tablet-max: 1023px;
+}

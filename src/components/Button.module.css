@@ -1,0 +1,34 @@
+.button {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--action-primary-bg);
+  color: var(--text-on-primary);
+  border-color: var(--action-primary-bg);
+}
+
+.secondary {
+  background: var(--surface-card);
+  color: var(--action-secondary-text);
+  border-color: var(--action-secondary-text);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--action-secondary-text);
+  border-color: transparent;
+}
